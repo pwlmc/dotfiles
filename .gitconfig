@@ -12,6 +12,8 @@
   br = branch
   co = checkout
   st = status
+  cp = cherry-pick
+  r = rebase
 
   # Lovely oneliners
   s = status -s .
@@ -19,8 +21,7 @@
   as = !git add . && git status -s
   l = !git --no-pager lg -n 10 && echo ""
   ds = diff --staged
-  cp = cherry-pick
-  r = rebase
+  cia = commit --amend
 
   # Relative diff with status (useful during resolving conflicts)
   d = diff --name-status --relative

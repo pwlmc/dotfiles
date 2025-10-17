@@ -41,7 +41,7 @@
   
   # Create new branch
   # Requires branch-safe-name: https://github.com/pwlmc/branch-safe-name
-  bnew = !"f() { npx branch-safe-name -s '-' -l pwlmc/$@ | xargs git co -b; }; f"
+  bn = !"f() { npx branch-safe-name -s '-' -l pwlmc/$@ | xargs git co -b; }; f"
 
 [user]
   name = "Paweł Maciejewski"

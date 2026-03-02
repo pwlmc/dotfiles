@@ -13,7 +13,8 @@
   co = checkout
   st = status
   cp = cherry-pick
-  r = rebase
+  rb = rebase
+  wt = worktree
 
   # Lovely oneliners
   s = status -s .
@@ -22,6 +23,8 @@
   l = !git --no-pager lg -n 10 && echo ""
   ds = diff --staged
   cia = commit --amend
+  wta = worktree add
+  wtr = worktree remove
 
   # Relative diff with status (useful during resolving conflicts)
   d = diff --name-status --relative

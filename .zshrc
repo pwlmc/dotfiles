@@ -1,3 +1,10 @@
+# Disable visual bell on completion
+unsetopt LIST_BEEP
+
+# Enable mouse support in less by default.
+# -R option to keep ANSI colors
+export LESS='--mouse -R'
+
 # Editor
 export EDITOR='micro'
 

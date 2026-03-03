@@ -1,7 +1,7 @@
 Dotfiles
 ========
 
-Dotfiles for zsh and git.
+Dotfiles for zsh, git, and tmux.
 
 ## Prerequisites
 
@@ -9,6 +9,7 @@ Dotfiles for zsh and git.
 * [Micro Editor](https://micro-editor.github.io/)
 * [branch-safe-name](https://github.com/pwlmaciejewski/branch-safe-name)
 * tree: `brew install tree`
+* tmux: `brew install tmux`
 
 ## Installation
 

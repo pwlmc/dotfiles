@@ -5,6 +5,12 @@ unsetopt LIST_BEEP
 # -R option to keep ANSI colors
 export LESS='--mouse -R'
 
+# Upgrade terminal colors
+if [[ "$TERM" == "xterm" ]]; then
+  export TERM="xterm-256color"
+fi
+export COLORTERM="truecolor"
+
 # Editor
 export EDITOR='micro'
 

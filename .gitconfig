@@ -23,6 +23,7 @@
   l = !git --no-pager lg -n 10 && echo ""
   ds = diff --staged
   cia = commit --amend
+  wtl = worktree list
   wta = worktree add
   wtr = worktree remove
 

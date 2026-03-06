@@ -47,6 +47,12 @@
   # Requires branch-safe-name: https://github.com/pwlmc/branch-safe-name
   bn = !"f() { npx branch-safe-name -s '-' -l pwlmc/$@ | xargs git co -b; }; f"
 
+  # Set current brench to track upstream in origin
+  track = "!git branch --set-upstream-to=origin/$(git branch --show-current)"
+
+  # Reset with the up-to-date upstream
+  reset-up = "!git fetch origin && git reset --hard @{u}"
+
 [user]
   name = "Paweł Maciejewski"
   email = 1276139+pwlmaciejewski@users.noreply.github.com

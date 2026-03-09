@@ -28,4 +28,6 @@ alias ttt='t -L 3'
 
 # Docker
 alias dps='docker ps'
-alias dsh='docker exec -it'
+dsh() {
+  docker exec -it "$1" zsh
+}

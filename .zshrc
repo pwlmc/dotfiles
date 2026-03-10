@@ -31,3 +31,8 @@ alias dps='docker ps'
 dsh() {
   docker exec -it "$1" zsh
 }
+
+# Devcontainers
+alias dev='devcontainer'
+alias devup='devcontainer up --workspace-folder .'
+devx() { devcontainer exec "$@"; }

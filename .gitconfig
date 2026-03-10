@@ -53,6 +53,13 @@
   # Reset with the up-to-date upstream
   reset-up = "!git fetch origin && git reset --hard @{u}"
 
+  # Rebase with base branch from origin
+  sync = "!f() { \
+    git fetch origin && \
+    base=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && \
+    git rebase --autostash origin/$base; \
+  }; f"
+
 [user]
   name = "Paweł Maciejewski"
   email = 1276139+pwlmaciejewski@users.noreply.github.com

@@ -36,3 +36,20 @@ dsh() {
 alias dev='devcontainer'
 alias devup='devcontainer up --workspace-folder .'
 devx() { devcontainer exec "$@"; }
+
+portinfo() {
+  local port="$1"
+  local pid
+
+  pid=$(lsof -nP -iTCP:"$port" -sTCP:LISTEN -t | head -n1)
+
+  if [[ -z "$pid" ]]; then
+    echo "Port $port is free"
+    return 1
+  fi
+
+  echo "Port: $port"
+  echo "PID:  $pid"
+  echo "CMD:  $(ps -p "$pid" -o comm= | xargs)"
+  echo "DIR:  $(lsof -a -p "$pid" -d cwd -Fn 2>/dev/null | sed -n 's/^n//p')"
+}

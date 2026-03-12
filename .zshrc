@@ -45,7 +45,7 @@ portinfo() {
 
   if [[ -z "$pid" ]]; then
     echo "Port $port is free"
-    return 1
+    return 0
   fi
 
   echo "Port: $port"

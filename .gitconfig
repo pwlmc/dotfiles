@@ -26,6 +26,7 @@
   wtl = worktree list
   wta = worktree add
   wtr = worktree remove
+  stat = !git --no-pager diff --staged --stat
 
   # Relative diff with status (useful during resolving conflicts)
   d = diff --name-status --relative

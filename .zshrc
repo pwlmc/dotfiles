@@ -37,7 +37,8 @@ dsh() {
 
 # Devcontainers
 alias dev='devcontainer'
-alias devup='devcontainer up --workspace-folder .'
+alias devup='devcontainer up'
+alias devupup='devcontainer up --remove-existing-container'
 devx() { devcontainer exec "$@"; }
 
 portinfo() {

@@ -2,6 +2,9 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Add dotfiles bin to PATH
+export PATH="${0:A:h}/bin:$PATH"
+
 # Disable visual bell on completion
 unsetopt LIST_BEEP
 

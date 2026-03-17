@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dir="${1:?Usage: $0 <directory> <window-name>}"
+window_name="${2:?Usage: $0 <directory> <window-name>}"
+
+if ! command -v tmux >/dev/null 2>&1; then
+  echo "tmux is not installed or not in PATH" >&2
+  exit 1
+fi
+
+if [ -z "${TMUX:-}" ]; then
+  echo "This script must be run from inside a tmux session" >&2
+  exit 1
+fi
+
+if [ ! -d "$dir" ]; then
+  echo "Directory does not exist: $dir" >&2
+  exit 1
+fi
+
+dir="$(cd "$dir" && pwd)"
+
+tmux new-window -n "$window_name" -c "$dir"
+window_id="$(tmux display-message -p '#{window_id}')"
+
+tmux split-window -h -t "$window_id" -c "$dir"
+tmux split-window -v -t "$window_id".0 -c "$dir"
+
+tmux select-pane -t "$window_id".0

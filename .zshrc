@@ -41,6 +41,9 @@ alias devup='devcontainer up'
 alias devupup='devcontainer up --remove-existing-container'
 devx() { devcontainer exec "$@"; }
 
+# Git worktree remove + kill tmux window
+wtkill() { local win="$TMUX_PANE"; git wtr . && tmux kill-window -t "$win"; }
+
 portinfo() {
   local port="$1"
   local pid

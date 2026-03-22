@@ -63,7 +63,7 @@
 
 [user]
   name = "Paweł Maciejewski"
-  email = 1276139+pwlmaciejewski@users.noreply.github.com
+  email = 1276139+pwlmc@users.noreply.github.com
 [core]
   excludesfile = ~/.gitignore
   editor = micro

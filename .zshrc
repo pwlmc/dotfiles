@@ -30,15 +30,18 @@ alias tt='t -L 2'
 alias ttt='t -L 3'
 
 # Docker
-alias dps='docker ps'
-dsh() {
+alias dps='docker ps --format "table {{.Names}}\t{{.Label \"devcontainer.local_folder\"}}\t{{.Ports}}\t{{.Status}}"'
+dcx() {
   docker exec -it "$1" zsh
 }
+
+# Docker Compose
+alias dcmp='docker compose'
 
 # Devcontainers
 alias dev='devcontainer'
 alias devup='devcontainer up'
-alias devupup='devcontainer up --remove-existing-container'
+alias devrup='devcontainer up --remove-existing-container'
 devx() { devcontainer exec "$@"; }
 
 # Git worktree remove + kill tmux window

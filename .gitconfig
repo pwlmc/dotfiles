@@ -27,6 +27,14 @@
   wta = worktree add
   wtr = worktree remove
   stat = !git --no-pager diff --staged --stat
+  statcode = !git --no-pager diff --staged --stat -- . \
+	':(exclude)**/*.test.*' \
+	':(exclude)**/*.spec.*' \
+	':(exclude)**/*.stories.*' \
+	':(exclude)**/__tests__/**' \
+	':(exclude)**/storybook/**' \
+	':(exclude)yarn.lock' \
+	':(exclude)package-lock.json'
 
   # Relative diff with status (useful during resolving conflicts)
   d = diff --name-status --relative

@@ -19,7 +19,7 @@ fi
 export COLORTERM="truecolor"
 
 # Editor
-export EDITOR='micro'
+export EDITOR='emacs'
 
 # Aliases
 alias du='du -h'
@@ -28,6 +28,8 @@ alias df='df -h'
 alias t='tree --dirsfirst --noreport -L 1'
 alias tt='t -L 2'
 alias ttt='t -L 3'
+alias e='emacs'
+alias c='code'
 
 # Docker
 alias dps='docker ps --format "table {{.Names}}\t{{.Label \"devcontainer.local_folder\"}}\t{{.Ports}}\t{{.Status}}"'

@@ -74,4 +74,4 @@
   email = 1276139+pwlmc@users.noreply.github.com
 [core]
   excludesfile = ~/.gitignore
-  editor = micro
+  editor = emacs

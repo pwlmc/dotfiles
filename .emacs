@@ -60,3 +60,19 @@
 (use-package orderless
   :custom
   (completion-styles '(orderless basic)))
+
+;; TS / TSX
+(setq treesit-language-source-alist
+      '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" nil "typescript/src")
+        (tsx "https://github.com/tree-sitter/tree-sitter-typescript" nil "tsx/src")))
+
+(defun ensure-treesit-language (lang)
+  (unless (treesit-language-available-p lang)
+    (message "Installing Tree-sitter grammar for %s..." lang)
+    (treesit-install-language-grammar lang)))
+
+(ensure-treesit-language 'typescript)
+(ensure-treesit-language 'tsx)
+
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))

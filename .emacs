@@ -1,3 +1,16 @@
+;; Package repos
+(require 'package)
+
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")))
+
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+
 ;; Mouse / wheel
 (mouse-wheel-mode 1)
 (xterm-mouse-mode 1)
@@ -21,16 +34,6 @@
 (setq auto-save-default nil)
 
 ;; Markdown mode
-(require 'package)
-
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
-
-(package-initialize)
-
-(unless package-archive-contents
-  (package-refresh-contents))
-
 (unless (package-installed-p 'markdown-mode)
   (package-install 'markdown-mode))
 
@@ -39,3 +42,21 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 
+;; Fuzzy search
+(unless (package-installed-p 'vertico)
+  (package-install 'vertico))
+(require 'vertico)
+(vertico-mode 1)
+
+(unless (package-installed-p 'orderless)
+  (package-install 'orderless))
+(require 'orderless)
+(setq completion-styles '(orderless basic))
+
+(use-package vertico
+  :init
+  (vertico-mode))
+
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic)))

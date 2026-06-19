@@ -49,6 +49,16 @@ else
   skip
 fi
 
+# --- Emacs ---
+EMACS_LINE="(load \"~/dotfiles/.emacs\")"
+step "Configuring emacs"
+if ! grep -Fqx "$EMACS_LINE" "$HOME/.emacs" 2>/dev/null; then
+    printf '\n%s\n' "$EMACS_LINE" >> "$HOME/.emacs"
+    ok
+else
+    skip
+fi
+
 echo
 echo "✨ Dotfiles installation complete."
 echo

@@ -43,7 +43,7 @@ alias dcmp='docker compose'
 # Devcontainers
 alias dev='devcontainer'
 alias devup='devcontainer up'
-alias devrup='devcontainer up --remove-existing-container'
+alias devupf='devcontainer up --remove-existing-container'
 devx() { devcontainer exec "$@"; }
 
 # Git worktree remove + kill tmux window

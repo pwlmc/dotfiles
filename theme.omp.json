@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "version": 4,
+  "blocks": [
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "darkGray",
+          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
+          "style": "plain",
+          "template": "\u256d\u2500",
+          "type": "text"
+        },
+        {
+          "background": "darkGray",
+          "foreground": "white",
+
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "type": "os"
+        },
+        {
+          "background": "darkGray",
+          "foreground": "white",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4",
+          "type": "path"
+        },
+        {
+          "foreground": "magenta",
+          "background": "default",
+          "style": "plain",
+          "template": " \ue725 {{ .Ref }}{{ if .Working.Changed }} <blue>\uea73</>{{ end }}{{ if .Staging.Changed }} <blue>\uf487</>{{ end }}",
+          "type": "git"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "darkGray",
+          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
+          "style": "plain",
+          "template": "\u2570\u2500",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

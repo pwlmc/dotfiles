@@ -26,6 +26,7 @@
   wtl = worktree list
   wta = worktree add
   wtr = worktree remove
+  wipe = "!git reset --hard && git clean -df"
   stat = !git --no-pager diff --staged --stat
   statcode = !git --no-pager diff --staged --stat -- . \
 	':(exclude)**/*.test.*' \

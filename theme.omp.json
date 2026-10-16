@@ -30,10 +30,10 @@
           "type": "path"
         },
         {
-          "foreground": "magenta",
+          "foreground": "blue",
           "background": "default",
           "style": "plain",
-          "template": " \ue725 {{ .Ref }}{{ if .Working.Changed }} <blue>\uea73</>{{ end }}{{ if .Staging.Changed }} <blue>\uf487</>{{ end }}",
+          "template": " \ue725 {{ .Ref }}{{ if .Working.Changed }} \uea73{{ end }}{{ if .Staging.Changed }} \uf487{{ end }}",
           "type": "git"
         }
       ]

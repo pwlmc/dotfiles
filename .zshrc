@@ -40,14 +40,8 @@ dcx() {
 # Docker Compose
 alias dcmp='docker compose'
 
-# Devcontainers
-alias dev='devcontainer'
-alias devup='devcontainer up'
-alias devupf='devcontainer up --remove-existing-container'
-devx() { devcontainer exec "$@"; }
-
-# Git worktree remove + kill tmux window
-wtkill() { local win="$TMUX_PANE"; git wtr . && tmux kill-window -t "$win"; }
+# Reset and clean worktree, remove it, then kill tmux window
+wtkill() { local win="$TMUX_PANE"; git wipe && git wtr . && tmux kill-window -t "$win"; }
 
 portinfo() {
   local port="$1"
